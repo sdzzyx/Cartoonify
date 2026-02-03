@@ -44,11 +44,11 @@ final class LoginRegisterViewModel: ObservableObject {
 
     private func login() {
         print("Logging in with \(email)")
-        // API call later
+        // API call
     }
 
     private func register() {
         print("Registering with \(email)")
-        // API call later
+        // API call
     }
 }
