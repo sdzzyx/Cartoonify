@@ -11,7 +11,7 @@ import SwiftUI
 struct CartoonifyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }
