@@ -10,11 +10,17 @@ import SwiftUI
 struct LoginRegisterView: View {
     @Environment(\.colorScheme) private var colorScheme
     
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showPass = false
     @State private var authType: AuthType = .login
     
+    @FocusState private var isAnyFieldFocused: Bool
+    
+    @FocusState private var isFirstNameFocused
+    @FocusState private var isLastNameFocused
     @FocusState private var isEmailFocused
     @FocusState private var isPasswordFocused
     
@@ -24,6 +30,12 @@ struct LoginRegisterView: View {
             SegmentedView(authType: $authType)
             
             VStack(spacing: 15) {
+                
+                if authType == .register {
+                    firstNameField
+                    lastNameField
+                }
+                
                 emailField
                 passwordField
             }
@@ -31,23 +43,51 @@ struct LoginRegisterView: View {
             submitButton
             BottomView(authType: $authType)
         }
-        .padding()
+        .ignoresSafeArea(.container, edges: [.top, .bottom])
+        .padding(.horizontal)
+        
+        .onTapGesture {
+            isAnyFieldFocused = false
+        }
     }
 }
 
 // MARK: - Subviews
 private extension LoginRegisterView {
     
+    var firstNameField: some View {
+        TextField(
+            AppConstant.LoginScreen.firstNamePlaceholder,
+            text: $firstName
+        )
+        .focused($isAnyFieldFocused)
+        .textFieldStyle(
+            AuthTextFieldStyle(isFocused: $isFirstNameFocused)
+        )
+    }
+    
+    var lastNameField: some View {
+        TextField(
+            AppConstant.LoginScreen.lastNamePlaceholder,
+            text: $lastName
+        )
+        .focused($isAnyFieldFocused)
+        .textFieldStyle(
+            AuthTextFieldStyle(isFocused: $isLastNameFocused)
+        )
+    }
+    
     var emailField: some View {
         TextField(
             AppConstant.LoginScreen.emailPlaceholder,
             text: $email
         )
-        .focused($isEmailFocused)
+        .focused($isAnyFieldFocused)
         .textFieldStyle(
             AuthTextFieldStyle(isFocused: $isEmailFocused)
         )
     }
+    
     
     var passwordField: some View {
         ZStack {
@@ -56,7 +96,7 @@ private extension LoginRegisterView {
                 AppConstant.LoginScreen.passwordPlaceholder,
                 text: $password
             )
-            .focused($isPasswordFocused)
+            .focused($isAnyFieldFocused)
             .textFieldStyle(
                 AuthTextFieldStyle(isFocused: $isPasswordFocused)
             )
@@ -71,7 +111,7 @@ private extension LoginRegisterView {
                 AppConstant.LoginScreen.passwordPlaceholder,
                 text: $password
             )
-            .focused($isPasswordFocused)
+            .focused($isAnyFieldFocused)
             .textFieldStyle(
                 AuthTextFieldStyle(isFocused: $isPasswordFocused)
             )
