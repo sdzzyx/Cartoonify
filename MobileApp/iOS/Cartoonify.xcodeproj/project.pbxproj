@@ -212,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				A8AC4C852F2B337A009C0010 /* TabBar */,
-				A8AC4BFD2F2371A7009C0010 /* CartoonDetails */,
 				A8AC4BFA2F23718F009C0010 /* Profile */,
 				A8AC4BF72F23717B009C0010 /* Favorites */,
 				A8AC4BF42F237150009C0010 /* Home */,
@@ -345,29 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				A8AC4C8D2F2B3436009C0010 /* ProfileView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A8AC4BFD2F2371A7009C0010 /* CartoonDetails */ = {
-			isa = PBXGroup;
-			children = (
-				A8AC4C152F237214009C0010 /* View */,
-				A8AC4C142F23720D009C0010 /* ReusableView */,
-			);
-			path = CartoonDetails;
-			sourceTree = "<group>";
-		};
-		A8AC4C142F23720D009C0010 /* ReusableView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ReusableView;
-			sourceTree = "<group>";
-		};
-		A8AC4C152F237214009C0010 /* View */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
