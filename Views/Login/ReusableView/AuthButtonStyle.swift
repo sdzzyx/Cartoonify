@@ -12,18 +12,10 @@ struct AuthButtonType: ButtonStyle {
         configuration.label
             .frame(maxWidth: .infinity)
             .padding(.vertical, 18)
-            .foregroundStyle(Color.white)
+            .foregroundStyle(.white)
             .font(.system(size: 20, weight: .bold, design: .rounded))
-            .foregroundColor(.white)
-            .background(
-                LinearGradient(stops: [
-                    .init(color: .black, location: 0.0),
-                    //.init(color: Color.white, location: 1.0) for gradient
-                ], startPoint: .leading, endPoint: .trailing
-                )
-            )
+            .background(Color.black)
             .cornerRadius(15)
-            .brightness(configuration.isPressed ? 0.05 : 0)
             .opacity(configuration.isPressed ? 0.5 : 1)
             .padding(.vertical, 12)
     }
