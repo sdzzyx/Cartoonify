@@ -12,14 +12,14 @@ struct TopView: View {
         VStack(alignment: .center) {
             Image(AppConstant.LoginScreen.logoImageName)
                 .resizable()
-                .cornerRadius(30)
+                //.cornerRadius(30)
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 85)
+                .frame(width: 220)
             
-            Text(AppConstant.LoginScreen.loginScreenTitle)
-                .font(.system(size: 35, weight: .bold, design: .rounded,))
+//            Text(AppConstant.LoginScreen.loginScreenTitle)
+//                .font(.system(size: 35, weight: .bold, design: .rounded,))
             
         }
-        .padding(.top, 40)
+        .padding(.top, 150)
     }
 }
