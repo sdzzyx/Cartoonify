@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8A076C72F33448100D8D078 /* CartoonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A076C62F33447900D8D078 /* CartoonDetailsView.swift */; };
 		A8AC4B7D2F164EB2009C0010 /* LoginRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC4B7C2F164EB2009C0010 /* LoginRegisterView.swift */; };
 		A8AC4B7F2F164EB3009C0010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8AC4B7E2F164EB3009C0010 /* Assets.xcassets */; };
 		A8AC4BCB2F16713C009C0010 /* AuthButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC4BCA2F167139009C0010 /* AuthButtonStyle.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8A076C62F33447900D8D078 /* CartoonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonDetailsView.swift; sourceTree = "<group>"; };
 		A8AC4B772F164EB2009C0010 /* Cartoonify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartoonify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AC4B7C2F164EB2009C0010 /* LoginRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterView.swift; sourceTree = "<group>"; };
 		A8AC4B7E2F164EB3009C0010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +183,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8A076C32F33446400D8D078 /* CartoonDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A8A076C52F33447100D8D078 /* ReusableView */,
+				A8A076C42F33446C00D8D078 /* View */,
+			);
+			path = CartoonDetails;
+			sourceTree = "<group>";
+		};
+		A8A076C42F33446C00D8D078 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8A076C62F33447900D8D078 /* CartoonDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8A076C52F33447100D8D078 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReusableView;
+			sourceTree = "<group>";
+		};
 		A8AC4B6E2F164EB2009C0010 = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +237,7 @@
 		A8AC4BB02F164F08009C0010 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8A076C32F33446400D8D078 /* CartoonDetails */,
 				A8AC4C852F2B337A009C0010 /* TabBar */,
 				A8AC4BFA2F23718F009C0010 /* Profile */,
 				A8AC4BF72F23717B009C0010 /* Favorites */,
@@ -535,6 +562,7 @@
 				A8AC4C512F27A307009C0010 /* CartoonThumbnail.swift in Sources */,
 				A8AC4C8A2F2B33FA009C0010 /* MainTabView.swift in Sources */,
 				A8AC4BD02F16719F009C0010 /* TopView.swift in Sources */,
+				A8A076C72F33448100D8D078 /* CartoonDetailsView.swift in Sources */,
 				A8AC4C882F2B3393009C0010 /* FloatingTabBarView.swift in Sources */,
 				A8AC4C8C2F2B3430009C0010 /* FavoriteView.swift in Sources */,
 				A8AC4C9C2F31A5FF009C0010 /* FavoriteCard.swift in Sources */,
