@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A8A076C72F33448100D8D078 /* CartoonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A076C62F33447900D8D078 /* CartoonDetailsView.swift */; };
+		A8A077A02F468FD900D8D078 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A8A0779F2F468FD900D8D078 /* Kingfisher */; };
 		A8AC4B7D2F164EB2009C0010 /* LoginRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC4B7C2F164EB2009C0010 /* LoginRegisterView.swift */; };
 		A8AC4B7F2F164EB3009C0010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8AC4B7E2F164EB3009C0010 /* Assets.xcassets */; };
 		A8AC4BCB2F16713C009C0010 /* AuthButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC4BCA2F167139009C0010 /* AuthButtonStyle.swift */; };
@@ -159,6 +160,7 @@
 			files = (
 				A8AC4C202F2492CA009C0010 /* PostgREST in Frameworks */,
 				A8AC4C1E2F2492CA009C0010 /* Functions in Frameworks */,
+				A8A077A02F468FD900D8D078 /* Kingfisher in Frameworks */,
 				A8AC4C4D2F27A1B3009C0010 /* Supabase in Frameworks */,
 				A8AC4C1C2F2492C9009C0010 /* Auth in Frameworks */,
 				A8AC4C242F2492CA009C0010 /* Storage in Frameworks */,
@@ -433,6 +435,7 @@
 				A8AC4C212F2492CA009C0010 /* Realtime */,
 				A8AC4C232F2492CA009C0010 /* Storage */,
 				A8AC4C4C2F27A1B3009C0010 /* Supabase */,
+				A8A0779F2F468FD900D8D078 /* Kingfisher */,
 			);
 			productName = Cartoonify;
 			productReference = A8AC4B772F164EB2009C0010 /* Cartoonify.app */;
@@ -515,6 +518,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				A8AC4C1A2F2492C9009C0010 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				A8A0779E2F468FD900D8D078 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A8AC4B782F164EB2009C0010 /* Products */;
@@ -908,6 +912,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A8A0779E2F468FD900D8D078 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.7.0;
+			};
+		};
 		A8AC4C1A2F2492C9009C0010 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift.git";
@@ -919,6 +931,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A8A0779F2F468FD900D8D078 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8A0779E2F468FD900D8D078 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		A8AC4C1B2F2492C9009C0010 /* Auth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A8AC4C1A2F2492C9009C0010 /* XCRemoteSwiftPackageReference "supabase-swift" */;
