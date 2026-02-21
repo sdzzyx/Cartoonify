@@ -10,6 +10,8 @@ import SwiftUI
 struct MainTabView: View {
     @StateObject private var tabViewModel = TabBarViewModel()
     @StateObject private var keyboard = KeyboardObserver()
+    @StateObject private var favoritesStore = FavoritesStore()
+    @StateObject private var homeViewModel = HomeViewModel()
     
     @State private var lastScrollOffset: CGFloat = 0
     @State private var isTabBarMinimized = false
@@ -18,6 +20,7 @@ struct MainTabView: View {
         ZStack {
             
             currentTabView
+                .environmentObject(favoritesStore)
                 .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
                     let delta = value - lastScrollOffset
                     
@@ -56,13 +59,15 @@ struct MainTabView: View {
     
     @ViewBuilder
     private var currentTabView: some View {
-        switch tabViewModel.selectedTab {
-        case .home:
-            HomeView()
-        case .favorite:
+        ZStack {
+            HomeView(viewModel: homeViewModel)
+                .opacity(tabViewModel.selectedTab == .home ? 1 : 0)
+            
             FavoriteView()
-        case .profile:
+                .opacity(tabViewModel.selectedTab == .favorite ? 1 : 0)
+            
             ProfileView()
+                .opacity(tabViewModel.selectedTab == .profile ? 1 : 0)
         }
     }
 }
