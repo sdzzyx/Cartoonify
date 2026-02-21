@@ -13,6 +13,7 @@ import Supabase
 @MainActor
 final class HomeViewModel: ObservableObject {
     @Published var searchText: String = ""
+    @Published var hasLoaded = false
 
     // Top section (ALL cartoons)
     @Published var allCartoons: [Cartoon] = []
@@ -74,16 +75,5 @@ final class HomeViewModel: ObservableObject {
             print("Fetch category error:", error)
         }
     }
-    
-    func toggleFavorite(for cartoon: Cartoon) {
-        if let index = allCartoons.firstIndex(where: { $0.id == cartoon.id }) {
-            allCartoons[index].isFavorite.toggle()
-        }
-        
-        if let index = categoryCartoons.firstIndex(where: { $0.id == cartoon.id }) {
-            categoryCartoons[index].isFavorite.toggle()
-        }
-    }
+
 }
-
-
