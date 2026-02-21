@@ -13,7 +13,6 @@ struct Cartoon: Identifiable, Decodable {
     let description: String
     let imageUrl: String
     let createdAt: Date
-    var isFavorite: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case id
