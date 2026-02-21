@@ -9,8 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     @Environment(\.colorScheme) private var colorScheme
-    @StateObject private var viewModel = HomeViewModel()
+    @ObservedObject var viewModel: HomeViewModel
     @FocusState private var isSearchFieldFocused: Bool
+    @EnvironmentObject var favoritesStore: FavoritesStore
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -25,9 +26,15 @@ struct HomeView: View {
         }
         .coordinateSpace(name: "scroll")
         .task {
+            guard !viewModel.hasLoaded else { return }
+            
             await viewModel.fetchAllCartoons()
             await viewModel.fetchCartoonsCategory(for: viewModel.selectedCategory)
+            await favoritesStore.loadFavorites(from: viewModel.allCartoons)
+            
+            viewModel.hasLoaded = true
         }
+
         .onChange(of: viewModel.selectedCategory) { newCategory in
             Task {
                 await viewModel.fetchCartoonsCategory(for: newCategory)
@@ -49,5 +56,10 @@ struct HomeView: View {
 
 
 #Preview {
-    HomeView()
+    // Initialize the dependencies
+    let mockViewModel = HomeViewModel()
+    let mockFavorites = FavoritesStore()
+    
+    HomeView(viewModel: mockViewModel)
+        .environmentObject(mockFavorites)
 }
