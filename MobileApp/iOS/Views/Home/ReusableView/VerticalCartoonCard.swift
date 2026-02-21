@@ -5,26 +5,24 @@
 //  Created by Lenard Cortuna on 1/28/26.
 //
 import SwiftUI
+import Kingfisher
 
 struct VerticalCartoonCard: View {
     @Binding var cartoon: Cartoon
+    @EnvironmentObject var favoritesStore: FavoritesStore
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            
-            // Image (top)
-            AsyncImage(url: URL(string: cartoon.imageUrl)) { phase in
-                switch phase {
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                default:
+            KFImage(URL(string: cartoon.imageUrl))
+                .loadDiskFileSynchronously()
+                .resizable()
+                .placeholder {
                     Color.gray.opacity(0.2)
                 }
-            }
-            .frame(height: 200)
-            .clipped()
+                .cancelOnDisappear(true)
+                .scaledToFill()
+                .frame(height: 200)
+                .clipped()
             
             // Text Area
             VStack(alignment: .leading, spacing: 8) {
@@ -40,14 +38,17 @@ struct VerticalCartoonCard: View {
                     Spacer()
                     
                     Button {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
-                            cartoon.isFavorite.toggle()
-                        }
+                        favoritesStore.toggleFavorite(cartoon)
                     } label: {
-                        Image(cartoon.isFavorite ? "heart.fill@24" : "heart.unfill@24")
-                            .resizable()
-                            .frame(width: 24, height: 24)
+                        Image(
+                            favoritesStore.isFavorite(cartoon)
+                            ? "heart.fill@24"
+                            : "heart.unfill@24"
+                        )
+                        .resizable()
+                        .frame(width: 24, height: 24)
                     }
+                    
                 }
                 
                 // Description
