@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    
+    @EnvironmentObject var favoritesStore: FavoritesStore
+    
     var body: some View {
         ScrollView {
-            VStack {
-                Text("Favorite")
+            VStack(spacing: 16) {
+                Text(AppConstant.FavoriteScreen.myFavoritesText)
                     .font(.largeTitle)
+                
+                ForEach($favoritesStore.favorites) { $cartoon in
+                    VerticalCartoonCard(cartoon: $cartoon)
+                }
             }
             .coordinateSpace(name: "scroll")
             .padding()

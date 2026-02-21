@@ -6,28 +6,27 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CartoonThumbnail: View {
     let cartoon: Cartoon
     
     var body: some View {
-        AsyncImage(url: URL(string: cartoon.imageUrl)) { phase in
-            switch phase {
-            case .success(let image):
-                image
-                    .resizable()
-                    .scaledToFill()
-                
-            case .failure(_):
-                placeholder
-                
-            case .empty:
-                placeholder
-                
-            @unknown default:
-                placeholder
+        KFImage(URL(string: cartoon.imageUrl))
+            .loadDiskFileSynchronously()
+            .resizable()
+            .placeholder {
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(Color.gray.opacity(0.2))
             }
-        }
+            .fade(duration: 0.25)
+            .cancelOnDisappear(true)
+            .scaledToFill()
+            .frame(width: 200, height: 120)
+            .clipShape(
+                RoundedRectangle(cornerRadius: 15, style: .continuous)
+            )
+
         .frame(width: 200, height: 120) // rectangle shape
         .clipShape(
             RoundedRectangle(cornerRadius: 15, style: .continuous)
