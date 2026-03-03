@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A8A076C72F33448100D8D078 /* CartoonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A076C62F33447900D8D078 /* CartoonDetailsView.swift */; };
 		A8A077A02F468FD900D8D078 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A8A0779F2F468FD900D8D078 /* Kingfisher */; };
+		A8A078512F4A9C4900D8D078 /* HomeSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A078502F4A9C4600D8D078 /* HomeSkeletonView.swift */; };
+		A8A078532F4A9C7300D8D078 /* VerticalCartoonSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A078522F4A9C6E00D8D078 /* VerticalCartoonSkeleton.swift */; };
+		A8A078552F4A9CB100D8D078 /* CartoonThumbnailSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A078542F4A9CAC00D8D078 /* CartoonThumbnailSkeleton.swift */; };
 		A8AC4B7D2F164EB2009C0010 /* LoginRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC4B7C2F164EB2009C0010 /* LoginRegisterView.swift */; };
 		A8AC4B7F2F164EB3009C0010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8AC4B7E2F164EB3009C0010 /* Assets.xcassets */; };
 		A8AC4BCB2F16713C009C0010 /* AuthButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC4BCA2F167139009C0010 /* AuthButtonStyle.swift */; };
@@ -60,6 +63,9 @@
 
 /* Begin PBXFileReference section */
 		A8A076C62F33447900D8D078 /* CartoonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonDetailsView.swift; sourceTree = "<group>"; };
+		A8A078502F4A9C4600D8D078 /* HomeSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSkeletonView.swift; sourceTree = "<group>"; };
+		A8A078522F4A9C6E00D8D078 /* VerticalCartoonSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCartoonSkeleton.swift; sourceTree = "<group>"; };
+		A8A078542F4A9CAC00D8D078 /* CartoonThumbnailSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonThumbnailSkeleton.swift; sourceTree = "<group>"; };
 		A8AC4B772F164EB2009C0010 /* Cartoonify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartoonify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AC4B7C2F164EB2009C0010 /* LoginRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterView.swift; sourceTree = "<group>"; };
 		A8AC4B7E2F164EB3009C0010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +113,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		A8A078562F4A9CF000D8D078 /* Extensions */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A8AC4B792F164EB2009C0010 /* Cartoonify */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Cartoonify;
@@ -212,6 +223,7 @@
 		A8AC4B6E2F164EB2009C0010 = {
 			isa = PBXGroup;
 			children = (
+				A8A078562F4A9CF000D8D078 /* Extensions */,
 				A8AC4C3E2F249352009C0010 /* Manager */,
 				A8AC4B792F164EB2009C0010 /* Cartoonify */,
 				A8AC4BC52F166D2E009C0010 /* Enumerator */,
@@ -306,6 +318,9 @@
 		A8AC4BF52F237160009C0010 /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				A8A078542F4A9CAC00D8D078 /* CartoonThumbnailSkeleton.swift */,
+				A8A078522F4A9C6E00D8D078 /* VerticalCartoonSkeleton.swift */,
+				A8A078502F4A9C4600D8D078 /* HomeSkeletonView.swift */,
 				A8AC4C962F2E39F6009C0010 /* KeyboardObserver.swift */,
 				A8AC4C7D2F29D824009C0010 /* VerticalCartoonCard.swift */,
 				A8AC4C792F290586009C0010 /* VerticalCartoonList.swift */,
@@ -419,6 +434,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				A8A078562F4A9CF000D8D078 /* Extensions */,
 				A8AC4B792F164EB2009C0010 /* Cartoonify */,
 				A8AC4BAB2F164EE6009C0010 /* CartoonifyTests */,
 				A8AC4BBA2F165197009C0010 /* Constants */,
@@ -575,6 +591,9 @@
 				A8AC4BCD2F16716A009C0010 /* AuthTextFieldStyle.swift in Sources */,
 				A8AC4BD22F16722A009C0010 /* SegmentedView.swift in Sources */,
 				A8AC4C7E2F29D827009C0010 /* VerticalCartoonCard.swift in Sources */,
+				A8A078512F4A9C4900D8D078 /* HomeSkeletonView.swift in Sources */,
+				A8A078532F4A9C7300D8D078 /* VerticalCartoonSkeleton.swift in Sources */,
+				A8A078552F4A9CB100D8D078 /* CartoonThumbnailSkeleton.swift in Sources */,
 				A8AC4C172F24688F009C0010 /* HomeTopView.swift in Sources */,
 				A8AC4C4F2F27A2F0009C0010 /* HorizontalCartoonList.swift in Sources */,
 				A8AC4C482F2734C8009C0010 /* SectionHeaderView.swift in Sources */,
